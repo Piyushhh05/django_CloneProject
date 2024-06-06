@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Master Registration
+{% endblock title %}
+
+{% block body %}
+<center>
+    <h1> <u>Master Registration</u></h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{EMFO.as_p}}
+        <input type="submit" value="Master Registration">
+    </form>
+</center>
+{% endblock body %}

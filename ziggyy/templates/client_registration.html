@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+client_registration
+{% endblock title %}
+
+{% block body %}
+  <center>
+    <h1><u>Client Registration</u></h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ECFO.as_p}}
+        <input type="submit" value="Client Register">
+    </form>
+  </center>
+{% endblock body %}
+    
