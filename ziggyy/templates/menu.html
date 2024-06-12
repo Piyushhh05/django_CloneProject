@@ -26,18 +26,12 @@ Menu
                       <tr>
                         <th scope="row">{{forloop.counter}}</th>
                         <td>{{item.items_name}}</td>
-                        <td>{{item.items_description}}</td>
+                        <td>{{item.items_description|truncatechars:30}}</td>
                         <td>{{item.items_price}}</td>
                         <td>
-                            <form action="update" method="get">
-                                <input type="submit" class="btn btn-primary" value="Update">
-                                <input type="text" name="pk" value="{{items.sno}}" style="display:none;">
-                              </form>
-                              <br>
-                              <form action="delete" method="get">
-                                <input type="submit" class="btn btn-danger" value="Delete">
-                                <input type="text" name="pk" value="{{items.sno}}" style="display:none;">
-                              </form>
+                            <a href="{% url 'delete_item' item.pk %}">Update |</a>
+                            <a href="{% url 'delete_item' item.pk %}">| Delete</a>
+                              
                         </td>
                       </tr>
                       {% endfor %}

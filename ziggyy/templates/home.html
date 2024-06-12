@@ -7,8 +7,33 @@ Home
 {% block body %}
 
 {% if user.is_authenticated %}
-    <h1>Welcome Client {{user.first_name}}</h1>
+
+{% if user.is_staff %}
+<h1><center>Welcome {{user.username}}</center></h1>
+    
+{% else %}
+    
+    <h1><center>Welcome Client {{user.first_name}}</center></h1>
+    {% endif %}
 {% endif %}
     
-<h1>Welcome to Ziggyy</h1>
+<h1><center><u>Welcome To Ziggyy</u></center></h1>
+<h3 class="sc-aXZVg dJnmZG title">What's on your mind?</h3>
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1675667625/PC_Creative%20refresh/Biryani_2.png" width="154" height="190" alt="restaurants curated for biryani">
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png" width="154" height="190" alt="restaurants curated for burger">
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029856/PC_Creative%20refresh/3D_bau/banners_new/Pizza.png" width="154" height="190" alt="restaurants curated for pizza">
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Pure_Veg.png" width="154" height="190" alt="restaurants curated for veg">
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029850/PC_Creative%20refresh/3D_bau/banners_new/Dosa.png" width="154" height="190" alt="restaurants curated for dosa">
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Rolls.png" width="154" height="190" alt="restaurants curated for roll">
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029853/PC_Creative%20refresh/3D_bau/banners_new/Kebabs.png" width="154" height="190" alt="restaurant curated for kebabs">
+
+<img class="sc-kAyceB eDtXYp" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029851/PC_Creative%20refresh/3D_bau/banners_new/Ice_Creams.png" width="154" height="190" alt="restaurants curated for icecream">
+
 {% endblock body %}

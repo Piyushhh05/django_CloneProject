@@ -22,7 +22,7 @@ from master.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('home/',home,name='home'),
+    path('',home,name='home'),
     path('client/',include('client.urls')),
     path('master/',include('master.urls')),
 

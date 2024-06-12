@@ -33,7 +33,7 @@ def master_login(request):
         if AMO and AMO.is_active and AMO.is_staff:
             login(request,AMO)
             request.session['username']=un
-            return HttpResponseRedirect(reverse('master_items'))
+            return HttpResponseRedirect(reverse('home'))
         return HttpResponse('Invalid Credentials')
     return render(request,'master_login.html')
 
@@ -57,7 +57,13 @@ def menu(request):
     return render(request,'menu.html', d)
 
 
-def update(request,pk):
-    item_object=Items.objects.get(item_id=pk)
-    d={'EIFO':item_object}
-    return HttpResponse(pk)
+def delete_item(request,pk):
+    get_menu=Items.objects.get(items_id=pk)
+    get_menu.delete()
+    return HttpResponseRedirect(reverse('menu'))
+
+    
+def update_item(request,pk):
+    get_menu=Items.objects.get(items_id=pk)
+    get_menu.save()
+    return HttpResponseRedirect(reverse('home'))
