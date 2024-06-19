@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cart
+{% endblock title %}
+
+{% block body %}
+<h1><center>CART</center></h1>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sl No</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Item Price</th>
+        <th scope="col">Item Total</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        {% for item in items  %}   
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.total}}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="4">Grand Total</td>
+        <td>{{Grand_Total}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <form action="Buy" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Order">
+  </form>
+{% endblock body %}

@@ -8,5 +8,12 @@ urlpatterns = [
     path('master_login',master_login,name='master_login'),
     path('master_items',master_items, name='master_items'),
     path('menu',menu,name='menu'),
-    path('update',update,name='update')
+    path('update/<int:pk>/',update_item,name='update_item'),
+    path('delete/<int:pk>/',delete_item,name='delete_item'),
+    path('changepassword',changepassword,name='changepassword'),
+    path('otp',otp,name='otp'),
+    path('forgotpassword/',forgotpassword,name='forgotpassword'),
+    path('updatepassword/',updatepassword,name='updatepassword'),
+    path('forgotpasswordotp/',forgotpasswordotp,name='forgotpasswordotp'),
+
     ]

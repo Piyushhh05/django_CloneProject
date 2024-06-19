@@ -2,9 +2,10 @@ from django.db import models
 
 # Create your models here.
 items_choices=(
-    ('Veg','Veg'),
-    ('Non-Veg','Non-Veg'),
-    ('Egg','Egg'),
+    ('Veg','Veg 🟢'),
+    ('Non-Veg','Non-Veg 🔴'),
+    ('Egg','Egg 🥚'),
+    ('Refreshment','Refreshment 🧊')
 )
 
 class Items(models.Model):
@@ -15,7 +16,6 @@ class Items(models.Model):
     items_type=models.CharField(choices=items_choices, max_length=150)
     items_image = models.ImageField()
 
-    
     def __str__(self):
         return self.items_name
 
